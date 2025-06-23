@@ -1,0 +1,9 @@
+{
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ],
+  "name": "RoboVAI Labs",
+  "description": "",
+  "prompt": ""
+}

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230284c7'/%3E%3Cpath d='M30 50 Q40 30 50 50 T70 50 M35 55 Q40 40 50 55 T65 55 M40 60 Q45 50 50 60 T60 60 M50 25 L50 20 M25 50 L20 50 M75 50 L80 50 M50 75 L50 80 M35 35 L30 30 M65 35 L70 30 M35 65 L30 70 M65 65 L70 70' stroke='%23e0f2fe' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='50' cy='50' r='12' fill='%237dd3fc'/%3E%3Ccircle cx='50' cy='50' r='7' fill='%23e0f2fe'/%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoboVAI Labs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          screens: {
+            'xs': '475px', // Custom extra-small breakpoint
+            'sm': '640px',
+            'md': '768px',
+            'lg': '1024px',
+            'xl': '1280px',
+            '2xl': '1536px',
+          },
+          extend: {
+            colors: {
+              primary: {"50":"#eff6ff","100":"#dbeafe","200":"#bfdbfe","300":"#93c5fd","400":"#60a5fa","500":"#3b82f6","600":"#2563eb","700":"#1d4ed8","800":"#1e40af","900":"#1e3a8a","950":"#172554"},
+              secondary: {"50":"#f0f9ff","100":"#e0f2fe","200":"#bae6fd","300":"#7dd3fc","400":"#38bdf8","500":"#0ea5e9","600":"#0284c7","700":"#0369a1","800":"#075985","900":"#0c4a6e","950":"#082f49"},
+              neutral: {"50":"#f8fafc","100":"#f1f5f9","200":"#e2e8f0","300":"#cbd5e1","400":"#94a3b8","500":"#64748b","600":"#475569","700":"#334155","800":"#1e293b","900":"#0f172a","950":"#020617"},
+              sky: {"50":"#f0f9ff","100":"#e0f2fe","200":"#bae6fd","300":"#7dd3fc","400":"#38bdf8","500":"#0ea5e9","600":"#0284c7","700":"#0369a1","800":"#075985","900":"#0c4a6e","950":"#082f49"},
+              indigo: {"50":"#eef2ff","100":"#e0e7ff","200":"#c7d2fe","300":"#a5b4fc","400":"#818cf8","500":"#6366f1","600":"#4f46e5","700":"#4338ca","800":"#3730a3","900":"#312e81","950":"#1e1b4b"},
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Lexend', 'sans-serif'],
+              arabic: ['Tajawal', 'sans-serif'],
+            },
+            animation: {
+              'pulse-fast': 'pulse 1s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'futuristic-glow': 'futuristicGlow 2s ease-in-out infinite alternate',
+              'data-pulse': 'dataPulse 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'shimmer': 'shimmer 3s ease-in-out infinite',
+              'scanline-continuous': 'scanlineContinuous 4s linear infinite', 
+              'breathing-glow': 'breathingGlow 2.5s ease-in-out infinite alternate',
+              'smooth-spin': 'smoothSpin 1.2s linear infinite',
+              'subtle-pulse': 'subtlePulse 2s ease-in-out infinite',
+              'fade-in-slide-up': 'fadeInSlideUp 0.5s ease-out forwards',
+              'scanline-oneshot': 'scanlineOneshotAnim 0.5s linear forwards',
+              'border-pulse': 'borderPulse 1.5s ease-in-out infinite',
+              'button-press-anim': 'buttonPress 0.1s ease-out',
+              'bubble-fade-in-slide-up': 'bubbleFadeInSlideUp 0.3s ease-out forwards',
+              'modal-fade-in': 'modalFadeIn 0.3s ease-out forwards',
+              'robot-mouth-speak': 'robotMouthSpeak 0.7s ease-in-out infinite', // Added for RobotIcon
+            },
+            backgroundImage: {
+              'gradient-dark-blue': 'linear-gradient(to bottom right, #020617, #082f49, #020617)',
+              'futuristic-grid': `url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%230ea5e9' fill-opacity='0.07' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E")`,
+            },
+             keyframes: {
+              fadeInSlideUp: {
+                'from': { opacity: '0', transform: 'translateY(10px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' },
+              },
+              bubbleFadeInSlideUp: {
+                'from': { opacity: '0', transform: 'translateY(15px)' },
+                'to': { opacity: '1', transform: 'translateY(0)' },
+              },
+              modalFadeIn: {
+                'from': { opacity: '0' },
+                'to': { opacity: '1' },
+              },
+              robotMouthSpeak: { // Added for RobotIcon
+                '0%, 100%': { transform: 'scaleY(1) translateY(0)' },
+                '25%': { transform: 'scaleY(0.7) translateY(0.5px)' },
+                '50%': { transform: 'scaleY(1.1) translateY(-0.3px)' },
+                '75%': { transform: 'scaleY(0.8) translateY(0.3px)' },
+              },
+              futuristicGlow: {
+                '0%, 100%': { boxShadow: '0 0 5px rgba(56,189,248,0.3), 0 0 10px rgba(56,189,248,0.2)' },
+                '50%': { boxShadow: '0 0 15px rgba(56,189,248,0.5), 0 0 25px rgba(56,189,248,0.4)' },
+              },
+              dataPulse: {
+                '0%': { opacity: '0.7', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.03)' },
+                '100%': { opacity: '0.7', transform: 'scale(1)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '-500px 0' },
+                '100%': { backgroundPosition: '500px 0' },
+              },
+              scanlineContinuous: { 
+                '0%': { backgroundPosition: '0 0' },
+                '100%': { backgroundPosition: '0 40px' },
+              },
+               scanlineOneshotAnim: {
+                '0%': { transform: 'translateY(-100%) scaleX(1)', opacity: '0' },
+                '20%': { opacity: '0.7' },
+                '100%': { transform: 'translateY(calc(100% + 2px)) scaleX(1.05)', opacity: '0'},
+              },
+              breathingGlow: { 
+                '0%, 100%': { 
+                  borderColor: 'rgba(56, 189, 248, 0.4)', 
+                  boxShadow: '0 0 4px rgba(56, 189, 248, 0.2), 0 0 8px rgba(56, 189, 248, 0.1) inset' 
+                },
+                '50%': { 
+                  borderColor: 'rgba(56, 189, 248, 0.8)', 
+                  boxShadow: '0 0 12px rgba(56, 189, 248, 0.4), 0 0 12px rgba(56, 189, 248, 0.2) inset' 
+                },
+              },
+              smoothSpin: {
+                'from': { transform: 'rotate(0deg)' },
+                'to': { transform: 'rotate(360deg)' },
+              },
+              subtlePulse: {
+                '0%, 100%': { opacity: '0.8', transform: 'scale(1)' },
+                '50%': { opacity: '1', transform: 'scale(1.02)' },
+              },
+              borderPulse: { 
+                '0%, 100%': { borderColor: 'rgba(255, 82, 82, 0.6)' }, 
+                '50%': { borderColor: 'rgba(255, 82, 82, 1)' },
+              },
+              inputFocusShadow: { 
+                '0%': { boxShadow: '0 0 0 0 rgba(56, 189, 248, 0)' },
+                '100%': { boxShadow: '0 0 0 3px rgba(56, 189, 248, 0.4)' },
+              },
+              buttonPress: { 
+                '0%': { transform: 'scale(1)' },
+                '50%': { transform: 'scale(0.97)' },
+                '100%': { transform: 'scale(1)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;700&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.1.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.0/",
+    "react/": "https://esm.sh/react@^19.1.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.1.0",
+    "uuid": "https://esm.sh/uuid@^11.1.0"
+  }
+}
+</script>
+<style>
+  body {
+    background-image: linear-gradient(to bottom right, #020617, #075985, #020617); /* neutral-950 to sky-800 to neutral-950 */
+    color: #e2e8f0; /* neutral-200 for default text */
+    font-size: 18px; 
+  }
+  @media (max-width: 768px) { 
+    body {
+      font-size: 17px; 
+    }
+  }
+   @media (max-width: 640px) { 
+    body {
+      font-size: 16px; 
+    }
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(2, 6, 23, 0.3); 
+    border-radius: 8px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(14, 165, 233, 0.4); 
+    border-radius: 8px;
+    border: 1px solid rgba(56, 189, 248, 0.15); 
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(14, 165, 233, 0.6); 
+  }
+
+  .text-shadow-sm-light {
+    text-shadow: 0px 1px 3px rgba(56, 189, 248, 0.25); 
+  }
+  .text-shadow-md-light {
+    text-shadow: 0px 2px 6px rgba(56, 189, 248, 0.35); 
+  }
+
+  .animation-delay-200 { animation-delay: 0.2s; }
+  .animation-delay-400 { animation-delay: 0.4s; }
+  .animation-delay-2000 { animation-delay: 2s; }
+  
+  .shimmer-text {
+    background-image: linear-gradient(to right, rgba(220, 230, 255, 0.6), rgba(200, 220, 255, 0.9), rgba(220, 230, 255, 0.6));
+    background-size: 200% 100%;
+    animation: shimmer 4s linear infinite; 
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+
+  .scanline-hover-effect {
+    position: relative;
+    overflow: hidden;
+  }
+  .scanline-hover-effect:hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px; 
+    background-color: rgba(56, 189, 248, 0.6); 
+    animation: scanlineOneshotAnim 0.4s linear forwards; 
+    opacity: 0; 
+    box-shadow: 0 0 5px rgba(56, 189, 248, 0.4);
+  }
+
+  /* Custom checkbox and select styles */
+  .form-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    display: inline-block;
+    position: relative;
+    width: 1.4em; /* Increased size */
+    height: 1.4em; /* Increased size */
+    border: 2px solid #475569; /* neutral-600 */
+    border-radius: 0.3rem; /* slightly larger radius */
+    background-color: #1e293b; /* neutral-800 */
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    vertical-align: middle;
+  }
+  .form-checkbox:checked {
+    background-color: #0ea5e9; /* sky-500 */
+    border-color: #0284c7; /* sky-600 */
+  }
+  .form-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 0.4em; 
+    top: 0.15em; 
+    width: 0.4em; 
+    height: 0.8em; 
+    border: solid white;
+    border-width: 0 0.2em 0.2em 0; 
+    transform: rotate(45deg);
+  }
+  .form-checkbox:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .form-checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.4);
+  }
+
+  .form-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='%2394a3b8'%3E%3Cpath fill-rule='evenodd' d='M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.29a.75.75 0 01.02-1.06z' clip-rule='evenodd' /%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 1.5em 1.5em; /* Increased arrow size */
+    padding-right: 3rem; /* Make more space for the larger arrow */
+  }
+  .form-select:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  .form-select:focus {
+     outline: none;
+     border-color: #38bdf8; /* sky-400 */
+     box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3); /* sky-400 with opacity */
+  }
+
+  /* Animation for RobotIcon's mouth, moved from RobotIcon.tsx */
+  /* This is now defined in tailwind.config and applied with animate-robot-mouth-speak utility class */
+  /*
+  @keyframes robotMouthSpeak {
+    0%, 100% { transform: scaleY(1) translateY(0); }
+    25% { transform: scaleY(0.7) translateY(0.5px); }
+    50% { transform: scaleY(1.1) translateY(-0.3px); }
+    75% { transform: scaleY(0.8) translateY(0.3px); }
+  }
+  .animate-robot-mouth-speak {
+    animation: robotMouthSpeak 0.7s ease-in-out infinite;
+  }
+  */
+
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
