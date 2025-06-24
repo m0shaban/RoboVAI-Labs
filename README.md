@@ -1,6 +1,6 @@
 <div align="center">
 
-![RoboVAI Labs Banner](https://placehold.co/1200x400/4B0082/FFFFFF/png?text=RoboVAI%20Labs)
+![RoboVAI Labs Banner](https://i.ibb.co/HycV1gd/Gemini-Generated-Image-a6smaja6smaja6sm.png)
 
 # 🤖 RoboVAI Labs: The Next-Generation Adaptive Learning Ecosystem
 
