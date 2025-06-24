@@ -8,12 +8,7 @@
 
 ---
 
-### 🚀 **[A Live Demo Link Will Be Placed Here]** 🚀
-
----
-
 <p align="center">
-  <a href="#"><img src="https://img.shields.io/badge/Status-Live%20Prototype-brightgreen?style=for-the-badge" alt="Status"></a>
   <a href="#"><img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react" alt="React 19"></a>
   <a href="#"><img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript" alt="TypeScript"></a>
   <a href="#"><img src="https://img.shields.io/badge/AI-Google%20Gemini%20%26%20Imagen-4A8CF7?style=for-the-badge&logo=google-gemini" alt="Gemini API"></a>
@@ -70,7 +65,7 @@ RoboVAI Labs is architected as a **Client-Centric, AI-Driven Pedagogical Engine*
 
 <div align="center">
 
-![Animation of the RoboVAI Labs platform showcasing personalization, AI chat, and interactive tools.]([https://placehold.co/800x450/4B0082/FFFFFF/gif?text=Live%20Personalized%20Learning%20Demo](https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGRmMWtqeHR4djd4MnF2ZGViNDNoZGl5eXFoOHdteHdha3I1YmFoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uURR4oSwec7OvtxVCy/giphy.gif))
+<img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExMGRmMWtqeHR4djd4MnF2ZGViNDNoZGl5eXFoOHdteHdha3I1YmFoZyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/uURR4oSwec7OvtxVCy/giphy.gif" alt="Live Personalized Learning Demo" width="800" />
 
 </div>
 
