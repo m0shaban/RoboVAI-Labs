@@ -61,7 +61,6 @@ RoboVAI Labs is architected as a **Client-Centric, AI-Driven Pedagogical Engine*
 
 ### 🖼️ Visual Demo
 
-*(A GIF demonstrating the full user journey is critical: 1. The initial splash screen setup. 2. A user chatting with a mentor. 3. The mentor assigning a quest. 4. The user completing the quest in the code editor and receiving points.)*
 
 <div align="center">
 
